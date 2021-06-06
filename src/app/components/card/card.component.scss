@@ -1,0 +1,37 @@
+.img-card {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.btns-block {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-btns {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  transform: translateY(50%);
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+
+}
+
+.card{
+  min-height: 170px;
+  min-height: 180px;
+}
+.card:hover {
+  .action-btns {
+    opacity: 1;
+
+    transform: translateY(0%);
+    transition: all 0.25s ease-in-out;
+
+  }
+}
+
+

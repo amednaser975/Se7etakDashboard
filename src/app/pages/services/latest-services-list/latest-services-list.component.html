@@ -1,0 +1,33 @@
+<div class=" header bg-primary pb-6">
+
+  <div class=" container-fluid">
+    <div class=" header-body">
+      <div class=" row align-items-center py-4">
+        <div class=" col-lg-6 col-7">
+          <h6 class=" h2 text-white d-inline-block mb-0">Latest Services</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class=" container-fluid mt--6">
+  
+  <div *ngIf="loading" class="row">
+    <app-shimmer class=" col-xl-3 col-md-6" *ngFor="let item of shimmerArray"></app-shimmer>
+
+  </div>
+  <div *ngIf="!loading" class="row">
+
+    <app-card class=" col-xl-3 col-md-6" *ngFor="let service of latestServiceArray"
+      (deleteSubmitHandler)="onDeleteHandler($event)" [id]="service.id" [cardTitle]="service.name"
+      [cardHeadline]="'Latest Services'" [statistics]="service.startDate" [spanText]="service.endDate"
+      [imgSrc]="service.picture" [editUrl]="'/services/edit'" [loading]="loading"></app-card>
+  </div>
+</div>
+
+
+<div class="fab-btn" [routerLink]="'/services/add'">
+  <i class="ni ni-fat-add"></i>
+</div>

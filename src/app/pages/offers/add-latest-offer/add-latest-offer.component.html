@@ -1,0 +1,121 @@
+<div class=" header bg-primary pb-6">
+
+  <div class=" container-fluid">
+    <div class=" header-body">
+      <div class=" row align-items-center py-4">
+        <div class=" col-lg-6 col-7">
+          <h6 class=" h2 text-white d-inline-block mb-0">Latest Offers</h6>
+          <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+            <ol class=" breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class=" breadcrumb-item">
+                <a [routerLink]="'/tests'"> <i class=" fas fa-home"> </i> </a>
+              </li>
+
+              <li class=" breadcrumb-item">
+                <a [routerLink]="'/services'"> Offers </a>
+              </li>
+
+              <li aria-current="page" class=" breadcrumb-item active">
+                Add Offer
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class=" container-fluid mt--6">
+  <div class=" card mb-4">
+    <div class=" card-body">
+
+      <div class="row">
+
+        <div class=" col-md-6">
+          <div class=" form-group">
+            <label class=" form-control-label" for="offer-name">
+              Offer Name
+            </label>
+
+            <input class=" form-control" id="offer-name" [(ngModel)]="latestOffer&& latestOffer.name"
+              placeholder="Offer Name" type="text" />
+          </div>
+        </div>
+        <div class=" col-md-6">
+          <div class=" form-group">
+            <label class=" form-control-label" for="offer-route">
+              Choose the Route
+            </label>
+
+            <select [(ngModel)]="latestOffer && latestOffer.routeId" class=" form-control" id="offer-route"
+              (change)="routeChanged($event.target.value)">
+              <option *ngFor="let route of routes" [value]="route.id"> {{route.pageName}} </option>
+            </select>
+          </div>
+        </div>
+        <!-- 
+  <div class=" card-body">
+    <form>
+      <select class=" form-control" data-toggle="select" id="selectr">
+        <option *ngFor="let route of routes" [value]="route"> {{route.name}} </option> </select>
+    </form>
+  </div> -->
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class=" form-group">
+            <label class="form-control-label">
+              Offer Duration
+            </label>
+
+            <input type="text" class="form-control" bsDaterangepicker [(ngModel)]="bsRangeValue" [bsConfig]="{
+          isAnimated: true,
+          containerClass: 'theme-blue'
+        }" name="bsDaterangepicker" />
+          </div>
+        </div>
+        <div class=" col-md-6">
+          <div class=" form-group">
+            <label class=" form-control-label" for="rankFormControl">
+              Rank
+            </label>
+
+            <select [(ngModel)]="latestOffer.rank" class=" form-control" id="rankFormControl">
+              <option *ngFor="let item of ranks; let i = index" [value]="i+1"> {{i+1}} </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class=" col">
+          <div class=" form-group">
+            <br>
+            <form>
+              <div class=" custom-file">
+                <input (change)="onImageUpload($event)" class="custom-file-input" id="offer-image" lang="en"
+                  type="file" />
+
+                <label class="custom-file-label" for="offer-image">
+                  Select file
+                </label>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col btns-block">
+          <button class=" btn btn-primary" type="button"
+            (click)="onAddLatestOffer()">{{editMode ? 'Edit': 'Save'}}</button>
+          <button class=" btn btn-outline-danger" type="button" [routerLink]="'/offers'">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
