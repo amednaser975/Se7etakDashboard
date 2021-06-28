@@ -19,14 +19,14 @@ export class DoctorsService {
 
   addNewDoctor(image, payload: Doctor): Observable<any> {
     const formData = new FormData();
-    // formData.append('pictureForm', image, image.name);
-    // formData.append('name', payload.name);
-    // formData.append('startDate', payload.startDate.toDateString());
-    // formData.append('endDate', payload.endDate.toDateString());
-    // formData.append('rank', payload.rank.toString());
-    // formData.append('routeId', payload.routeId.toString());
-    // formData.append('routeName', payload.routeName);
-
+    formData.append('pictureForm', image, image.name);
+    formData.append('id', payload.id.toString());
+    formData.append('name', payload.name);
+    formData.append('specialtyName', payload.specialtyName);
+    formData.append('phone', payload.phone);
+    formData.append('patientPay', payload.patientPay.toString());
+    formData.append('creationDate', payload.creationDate.toDateString());
+    formData.append('rank', payload.rank.toString());
     return this.http.post(this.doctorsUrl, formData);
   }
 
@@ -40,14 +40,14 @@ export class DoctorsService {
 
   updateDoctor(image, payload: Doctor): Observable<any> {
     const formData = new FormData();
-    // formData.append('pictureForm', image, image.name);
-    // formData.append('id', payload.id.toString());
-    // formData.append('name', payload.name);
-    // formData.append('startDate', payload.startDate.toDateString());
-    // formData.append('endDate', payload.endDate.toDateString());
-    // formData.append('rank', payload.rank.toString());
-    // formData.append('routeId', payload.routeId.toString());
-    // formData.append('routeName', payload.routeName);
+    formData.append('pictureForm', image, image.name);
+    formData.append('id', payload.id.toString());
+    formData.append('name', payload.name);
+    formData.append('specialtyName', payload.specialtyName);
+    formData.append('phone', payload.phone);
+    formData.append('patientPay', payload.patientPay.toString());
+    formData.append('creationDate', payload.creationDate.toDateString());
+    formData.append('rank', payload.rank.toString());
 
     return this.http.put(this.doctorsUrl, formData);
   }
