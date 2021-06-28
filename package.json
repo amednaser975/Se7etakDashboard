@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -44,5 +44,13 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "https://Eva-Digital@dev.azure.com/Eva-Digital/Se7etakDev/_git/Se7etakDashboard"
+  },
+  "author": "",
+  "license": "ISC"
 }

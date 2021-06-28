@@ -34,6 +34,8 @@ import { AddCityComponent } from './pages/geo-info/cities/add-city/add-city.comp
 import { CitiesListComponent } from './pages/geo-info/cities/cities-list/cities-list.component';
 import { AreasListComponent } from './pages/geo-info/areas/areas-list/areas-list.component';
 import { AddAreaComponent } from './pages/geo-info/areas/add-area/add-area.component';
+import { DoctorsLisitingComponent } from './pages/doctors/doctors-lisiting/doctors-lisiting.component';
+import { AddDoctorComponent } from './pages/doctors/add-doctor/add-doctor.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -60,6 +62,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CitiesListComponent,
     AreasListComponent,
     AddAreaComponent,
+    DoctorsLisitingComponent,
+    AddDoctorComponent,
 
   ],
   imports: [

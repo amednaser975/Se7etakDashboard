@@ -38,6 +38,12 @@ export const ROUTES: RouteInfo[] = [
     icontype: 'ni-shop text-primary',
   },
   {
+    path: '/doctors',
+    title: 'Doctors',
+    type: 'link',
+    icontype: 'ni-shop text-primary',
+  },
+  {
     path: '/services',
     title: 'Services',
     type: 'link',

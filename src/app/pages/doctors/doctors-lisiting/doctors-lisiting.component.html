@@ -3,7 +3,7 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <h6 class="h2 text-white d-inline-block mb-0">Latest Offers</h6>
+                    <h6 class="h2 text-white d-inline-block mb-0">Doctors</h6>
                 </div>
             </div>
         </div>
@@ -16,11 +16,11 @@
     </div>
 
     <div *ngIf="!loading" class="row">
-        <app-card class="col-xl-3 col-md-6" *ngFor="let offer of latestOffersArray" (deleteSubmitHandler)="onDeleteHandler($event)" [id]="offer.id" [cardTitle]="offer.name" [cardHeadline]="'Latest Offers'" [statistics]="offer.startDate" [spanText]="offer.endDate"
-            [imgSrc]="offer.picture" [editUrl]="'/offers/edit'" [loading]="loading"></app-card>
+        <app-card class="col-xl-3 col-md-6" *ngFor="let doctor of doctorsArray" (deleteSubmitHandler)="onDeleteHandler($event)" [id]="doctor.id" [cardTitle]="doctor.name" [cardHeadline]="'Doctors'" [statistics]="doctor.creationDate" [imgSrc]="doctor.imagePath"
+            [editUrl]="'/doctors/edit'" [loading]="loading"></app-card>
     </div>
 </div>
 
-<div class="fab-btn" [routerLink]="'/offers/add'">
+<div class="fab-btn" [routerLink]="'/doctors/add'">
     <i class="ni ni-fat-add"></i>
 </div>
